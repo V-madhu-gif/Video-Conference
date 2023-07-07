@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://sdk.videosdk.live/js-sdk/0.0.67/videosdk.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            background-image: url('https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_1280.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+        <div id="window" class="flex flex-col items-center justify-center p-20 bg-slate-50 w-1/4 rounded-xl shadow-xl mt-10"style="margin-left:574px">
+          <button id="but" class=" text-white p-2 bg-sky-600 rounded-xl mb-5">New Meeting</button>
+          OR
+          <input class="mt-4 p-2 rounded-md bg-transparent border-2" type="text" id="meetingIdTxt" placeholder="Enter Meeting id" />
+          <button id="joinBtn" class=" mt-4 p-2 bg-sky-600 text-white rounded-xl mb-5">Join Meeting</button>
+        </div>
+        <div>
+          <video class="mt-9" id="vid" style="margin-left: 445px;"></video>
+          <button id="btnOne" class="cursor-pointer m-4 ml-5 bg-sky-600 p-1 text-bold text-white rounded-md" style="display: none; margin-left: 736px">Leave</button>
+          <button id="btnTwo" class="cursor-pointer m-4 ml-5 bg-sky-600 p-1 text-bold text-white rounded-md" style="display: none; margin-left: 736px;">Invite</button>
+      </div>
+      <br />
+        <script>
+          let open = 0;
+    document.addEventListener("DOMContentLoaded", () => {
+        let but = document.getElementById("but");
+        let video = document.getElementById("vid");
+        let mediaDevices = navigator.mediaDevices;
+        vid.muted = true;
+        but.addEventListener("click", () => {
+          document.getElementById('window').style.display = "none";
+          document.getElementById('btnOne').style.display = "block";
+          document.getElementById('btnTwo').style.display = "block";
+            mediaDevices
+                .getUserMedia({
+                    video: true,
+                    audio: true,
+                })
+                .then((stream) => {
+ 
+                    // Changing the source of video to current stream.
+                    video.srcObject = stream;
+                    video.addEventListener("loadedmetadata", () => {
+                        video.play();
+                    });
+                })
+                .catch(alert);
+        });
+    });
+  
+            // Accessing the user camera and video.
+            
+             
+            </script>
+</body>
+</html>

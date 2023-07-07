@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Tailwind CSS CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Stylesheet-->
+    <style>
+        body{
+            background-image: url('https://cdn.pixabay.com/photo/2017/03/25/17/55/colorful-2174045_640.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <title>Video Call App - Home</title>
+</head>
+<body class="flex flex-col justify-center items-center mt-20 backdrop-blur-md ">
+    <div class="img-background">
+        <h2 class="text-3xl font-mono font-black tracking-wide mb-8 text-white">WEB Video Conference</h2>
+    </div>
+    <div class="Auth">
+        <form action="/login"method="post" class="bg-slate-50 p-8 rounded-xl shadow-md">
+            <div class="registerRef">
+                <p class="text-xs text-bold ml-5">Don't have a account ? <span class="text-sky-700"><a href="#">register</a></span></p>
+            </div>
+            <div class="inputs">
+                <input class="m-4 p-2 bg-transparent border-2 rounded-xl" type="email" name="email" id="" placeholder="Email" > <br>
+                <input  class="m-4 p-2 bg-transparent border-2 rounded-xl" type="password" name="password" id="" placeholder="Password"> <br>
+                <input class="cursor-pointer m-4 ml-5 bg-sky-600 p-1 text-bold text-white rounded-md" type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
